@@ -9,7 +9,7 @@ import {
 } from "@/lib/leaveRules";
 
 // =====================================
-// GET ALL LEAVE REQUESTS
+// GET ALL LEAVE REQUESTS FROM  EMPLOYEES
 // =====================================
 
 export async function GET() {
