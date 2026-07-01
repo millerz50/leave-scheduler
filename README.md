@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Team Leave Scheduler
 
-## Getting Started
+A simple internal HR application for viewing team leave, submitting leave requests, and approving or rejecting pending requests.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 16
+- TypeScript
+- Prisma ORM
+- SQLite
+- Tailwind CSS
+- Jest/Vitest (Unit Testing)
+
+---
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/millerz50/leave-scheduler.git
+```
+
+Navigate into the project.
+
+```bash
+cd leave-scheduler
+```
+
+Install project dependencies.
+
+```bash
+npm install
+```
+
+---
+
+## Configure Environment
+
+Create a `.env` file in the project root if one does not already exist.
+
+```env
+DATABASE_URL="file:./dev.db"
+```
+
+---
+
+## Set Up the Database
+
+Generate the Prisma Client.
+
+```bash
+npx prisma generate
+```
+
+Apply the database migrations.
+
+```bash
+npx prisma migrate dev
+```
+
+Seed the database with sample employees, holidays, and leave requests.
+
+```bash
+npm run seed
+```
+
+---
+
+## Run the Application
+
+Start the development server.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Run the Tests
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+or
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run test
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- View approved leave for the next 30 days
+- Submit new leave requests
+- View pending leave requests
+- Approve or reject pending requests
+- Prevent duplicate leave submissions
+- Prevent overlapping approved leave requests
+- Enforce the 30% team leave capacity rule
+- Exclude weekends from leave calculations
+- Exclude public holidays from leave calculations
+- Seed database with sample employees and public holidays
