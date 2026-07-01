@@ -78,7 +78,7 @@ export function hasOverlap(
     /*
         Business decision:
         Only approved leave blocks
-        a new request.
+        of new request.
       */
 
     if (leave.status !== LeaveStatus.APPROVED) {
@@ -105,15 +105,7 @@ export function checkTeamCapacity(
   );
 
   /*
-    Example:
-
-    Team size = 5
-
-    30% = 1.5
-
-    We round up
-
-    Maximum allowed = 2
+   
 
   */
 
